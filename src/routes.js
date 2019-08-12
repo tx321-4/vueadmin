@@ -1,6 +1,6 @@
-import Login from './views/Login.vue'
-import NotFound from './views/404.vue'
-import Home from './views/Home.vue'
+import Login from './views/Login.vue';
+import NotFound from './views/404.vue';
+import Home from './views/Home.vue';
 
 let routes = [
   {
@@ -20,6 +20,6 @@ let routes = [
     component: Home,
     name: '导航一'
   }
-]
+];
 
-export default routes
+export default routes;
