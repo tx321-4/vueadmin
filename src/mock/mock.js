@@ -2,8 +2,6 @@
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { LoginUsers, Users } from './data/user';
-
-/* eslint-disable no-unused-vars */
 let _Users = Users;
 
 export default {
@@ -43,6 +41,40 @@ export default {
         }, 1000);
       });
     });
+
+    // 获取用户列表
+    mock.onGet('/user/list').reply(config => {
+      let {name} = config.params;
+      let mockUsers = _Users.filter(user => {
+        if (name && user.name.indexOf(name) === -1) return false;
+        return true;
+      });
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve([200, {
+            users: mockUsers
+          }]);
+        }, 1000);
+      });
+    });
+
+    // 获取用户列表 （分页）
+    mock.onGet('/user/listpage').reply(config => {
+      let {page, name} = config.params;
+      let mockUsers = _Users.filter(user => {
+        if (name && user.name.indexOf(name) === -1) return false;
+        return true;
+      });
+      let total = mockUsers.length;
+      mockUsers = mockUsers.filter((u, index) => index < 20 * page && index >= 20 * (page - 1));
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve([200, {
+            total: total,
+            users: mockUsers
+          }]);
+        }, 1000);
+      });
+    });
   }
-}
-;
+};
