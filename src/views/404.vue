@@ -3,6 +3,9 @@
   <p class="page-container">404 page not found</p>
 </div>
 </template>
+<script>
+export default {};
+</script>
 
 <style lang="scss" scoped>
   .page-container {
