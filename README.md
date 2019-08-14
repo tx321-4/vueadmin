@@ -42,5 +42,17 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
   
 * 这个是因为在页面中使用了el-dropdown，但是在这个标签里面没有设置它的子元素，所以会报错，在el-dropdown中添加el-dropdown-menu标签就好
 
+#
 ### Table.vue 点击编辑 没有编辑弹窗
 * 解决方法 v-model="addFormVisible"  ==> v-model="addFormVisible" 
+
+#
+
+### scope 属性在2.5以后的版本中已经废弃， 被 slot-scope 替代
+
+#
+
+### 在当前路由页面下，再次点击当前路由 报错 NavigationDuplicated 
+
+* 原因  vue-router3.0+ 版本过高; ==>使用 vue-router@2.8
+#
