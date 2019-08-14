@@ -5,6 +5,8 @@
 
 ## [原文链接：（https://github.com/taylorchen709/vue-admin）](https://github.com/taylorchen709/vue-admin)
 
+## 线上demo：[http://ag02.liumianti.top](http://ag02.liumianti.top)
+
 ``` bash
 # install dependencies
 npm install
