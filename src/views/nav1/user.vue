@@ -64,5 +64,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+  .el-table {
+    border: 1px solid #dfe6ec;
+  }
 </style>

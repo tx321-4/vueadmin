@@ -91,7 +91,7 @@
 export default {
   data () {
     return {
-      sysName: 'MYOUR',
+      sysName: 'SHIYI',
       collapsed: false,
       sysUserName: '',
       sysUserAvatar: ''
@@ -101,6 +101,18 @@ export default {
   methods: {
     handleopen () {
       console.log('handleopen');
+    },
+    // 退出登录
+    logout: function () {
+      var _this = this;
+      this.$confirm('确认退出吗？', '退出', {
+
+      }).then(() => {
+        sessionStorage.removeItem('user');
+        _this.$router.push('/login');
+      }).chatch(() => {
+
+      });
     },
     // 折叠导航栏
     collapse: function () {
@@ -173,6 +185,7 @@ export default {
       .logo-collapse-width {
         width: 60px;
         background: url('/static/images/logo.png');
+        background-size:100%;
       }
       .tools {
         padding: 0 23px;
